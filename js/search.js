@@ -1,0 +1,100 @@
+angular.module('sortApp', [])
+.controller('mainController', function ($scope) {
+    $scope.sortType = 'name'; // set the default sort type
+    $scope.sortReverse = false;  // set the default sort order
+    $scope.searchName = '';     // set the default search/filter term
+    $scope.sort_filter = [
+        { name: 'Couple of Poppies Anniversary Card',occ: 'Hallmark', price: 2.99 ,img : 'images/Aniversary/ani1.jpg'},
+        { name: 'Retro Snoopy Anniversary Card',occ: 'Hallmark', price: 3.99 ,img : 'images/Aniversary/ani2.jpg'},
+        { name: 'Mickey and Minnie Anniversary Card',occ: 'Hallmark', price: 6.99 ,img : 'images/Aniversary/ani3.jpg'},
+        { name: 'Wrong or Lucky Anniversary Card',occ: 'Amazon',  price: 3.99 ,img : 'images/Aniversary/ani4.jpg'},
+        { name: 'Both of You Anniversary Card',occ: 'Amazon',  price: 2.99 ,img : 'images/Aniversary/ani5.jpg'},
+        { name: '"I Do" Anniversary Card',occ: 'Amazon',  price: 3.99 ,img : 'images/Aniversary/ani6.jpg'},
+        { name: 'Always Been You Anniversary Card',occ: 'Amazon',  price: 4.99 ,img : 'images/Aniversary/ani7.jpg'},
+        { name: 'New Position Funny Love Card',occ: 'Amazon',  price: 2.99 ,img : 'images/Aniversary/ani8.jpg'},
+        { name: 'Love Birds Pop Up Anniversary Card',occ: 'Amazon',  price: 6.99 ,img : 'images/Aniversary/ani9.jpg'},
+
+        { name: 'Friend Birthday Card',occ: 'Hallmark', price: 3.49 ,img : 'images/birthday/bir1.jpg'},
+        { name: 'Kind of a Big Deal Birthday Card',occ: 'Hallmark', price: 4.99 ,img : 'images/birthday/bir2.jpg'},
+        { name: 'Snoopy Happy Birthday Card',occ: 'Hallmark', price: 2.99 ,img : 'images/birthday/bir3.jpg'},
+        { name: 'Big Questions Birthday Card',occ: 'Amazon',  price: 3.49 ,img : 'images/birthday/bir4.jpg'},
+        { name: 'Happiest Birthday Ever Card', occ: 'Amazon', price: 3.49 ,img : 'images/birthday/bir5.jpg'},
+        { name: 're Loved Funny Birthday Card',occ: 'Amazon',  price: 3.99 ,img : 'images/birthday/bir6.jpg'},
+        { name: 'Wonderful Day Birthday Card', occ: 'Amazon', price: 2.99 ,img : 'images/birthday/bir7.jpg'},
+        { name: 'Garage Sale Funny Birthday Card',occ: 'Amazon',  price: 3.49 ,img : 'images/birthday/bir8.jpg'},      
+        { name: 'Pop up Birthday Card', occ: 'Amazon', price: 3.99 ,img : 'images/birthday/bir9.jpg'},
+
+        { name: 'Holiday Traditions Christmas Cards',occ: 'Hallmark', price: 14.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Christmas Love Christmas Cards',occ: 'Hallmark', price: 9.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Gang Caroling Christmas Cards',occ: 'Cardcash',  price: 14.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Warmth and Cheer Christmas Cards',occ: 'Cardcash', price: 5.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Holiday Wishes Christmas Cards', occ: 'Cardcash',price: 5.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Wreath With Dove Christmas Cards',occ: 'Cardcash', price: 3.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Season of Beauty Christmas Cards', occ: 'Cardcash',price: 7.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Seasons Snowflakes Christmas Cards',occ: 'Cardcash', price: 2.99 ,img : 'images/chris/chris1.jpg'},
+        { name: 'Wreath With Dove Christmas Cards', occ: 'Cardcash',price: 9.99 ,img : 'images/chris/chris1.jpg'},
+
+        { name: 'New Home Congratulations Card',occ: 'Hallmark', price: 3.99 ,img : 'images/congra/con01.jpg'},
+        { name: 'Hell Yes Congratulations Blank Card',occ: 'Cardcash', price: 2.99 ,img : 'images/congra/con2.jpg'},
+        { name: 'Spanish-Language Congratulations Card',occ: 'Cardcash', price: 1.99 ,img : 'images/congra/con3.jpg'},
+        { name: 'Cocktails Congratulations Card',occ: 'Cardcash', price: 3.99 ,img : 'images/congra/con4.jpg'},
+        { name: 'Watercolor Mazel Congratulations Card',occ: 'Cardcash', price: 3.99 ,img : 'images/congra/con5.jpg'},
+        { name: 'Smiley Face Toast Congratulations Card',occ: 'Cardpool', price: 2.99 ,img : 'images/congra/con6.jpg'},
+        { name: 'Job Promotion Congratulations Card', occ: 'Cardpool',price: 2.99 ,img : 'images/congra/con7.jpg'},
+        { name: 'Floral Congratulations Card',occ: 'Cardpool', price: 3.99 ,img : 'images/congra/con8.jpg'},
+        { name: 'You Made It! Congratulations Card',occ: 'Cardpool', price:2.99 ,img : 'images/congra/con9.jpg'},
+
+        { name: 'Congratulated Graduation Card',occ: 'Hallmark',  price: 3.99 ,img : 'images/gra/gra1.jpg'},
+        { name: 'Gold Dot Graduation Card for Son', occ: 'Cardpool',price: 3.99 ,img : 'images/gra/gra2.jpg'},
+        { name: 'Compliments Graduation Card', occ: 'Cardpool',price: 4.99 ,img : 'images/gra/gra3.jpg'},
+        { name: 'Follow Your Heart Graduation Card', occ: 'Cardpool',price: 3.99 ,img : 'images/gra/gra4.jpg'},
+        { name: 'Snoopy Smarty-Pants Graduation', occ: 'Cardpool',price: 5.99 ,img : 'images/gra/gra5.jpg'},
+        { name: 'Daughter Congratulations Card', occ: 'Cardpool',price: 3.99 ,img : 'images/gra/gra6.jpg'},  
+        { name: 'Snoopy Nursing School Graduation Card',occ: 'Cardpool', price: 4.99 ,img : 'images/gra/gra7.jpg'},
+        { name: 'Law Degree Graduation Card', occ: 'Cardpool',price: 5.99 ,img : 'images/gra/gra8.jpg'},
+        { name: 'Congratulated Graduation Card',occ: 'Cardpool', price: 4.99 ,img : 'images/gra/gra9.jpg'},
+
+        { name: 'Witch is Clothes Halloween Card', occ: 'Hallmark', price: 7.99 ,img : 'images/halo/ha1.jpg'},
+        { name: 'Dancing Skeleton Halloween Love Card', occ: 'Dayspring',price: 5.99 ,img : 'images/halo/ha2.jpg'},
+        { name: 'Pumpkin Drink Musical Halloween Card', occ: 'Dayspring',price: 5.99 ,img : 'images/halo/ha3.jpg'},
+        { name: 'Candy Corn Boo Halloween Card', occ: 'Dayspring',price: 7.99 ,img : 'images/halo/ha4.jpg'},
+        { name: 'Wishes for Grandson Halloween Card',occ: 'Dayspring', price: 4.99 ,img : 'images/halo/ha5.jpg'},
+        { name: 'Tricks and Treats Halloween Card', occ: 'Dayspring',price: 5.99 ,img : 'images/halo/ha6.jpg'},
+        { name: 'Just a Little Boo Halloween Card', occ: 'Dayspring',price: 5.99 ,img : 'images/halo/ha7.jpg'},
+        { name: 'Stinky Curse Halloween Sound Card', occ: 'Dayspring',price: 4.99 ,img : 'images/halo/ha8.jpg'},
+        { name: 'Orange and Black Owl Halloween Card', occ: 'Dayspring',price: 5.99 ,img : 'images/halo/ha9.jpg'},
+
+        { name: 'Patterns of Peace Sympathy Card',occ: 'Hallmark',  price: 4.99 ,img : 'images/sym/sym1.jpg'},
+        { name: 'Comfort in Time Sympathy Card',occ: 'Giftcard', price: 1.99 ,img : 'images/sym/sym2.jpg'},
+        { name: 'Glowing Wings Care and Concern Card',occ: 'Giftcard', price: 1.99 ,img : 'images/sym/sym3.jpg'},
+        { name: 'Watercolor Landscape Sympathy Card', occ: 'Giftcard',price: 1.99 ,img : 'images/sym/sym4.jpg'},
+        { name: 'Butterflies Sympathy Card', occ: 'Giftcard',price: 1.99 ,img : 'images/sym/sym5.jpg'},
+        { name: 'The Spirit Echoes Still Sympathy Card', occ: 'Giftcard',price: 2.99 ,img : 'images/sym/sym6.jpg'},
+        { name: 'The Spirit Echoes Still Sympathy Card', occ: 'Giftcard',price: 2.99 ,img : 'images/sym/sym7.jpg'},
+        { name: 'Beautiful Soul Sympathy Card',occ: 'Giftcard', price: 2.99 ,img : 'images/sym/sym8.jpg'},
+        { name: 'Bastin Birds in Nature Sympathy Card',occ: 'Giftcard', price: 2.99 ,img : 'images/sym/sym9.jpg'},
+
+        { name: 'Blank Thank You Notes', occ: 'Papyrus',price: 4.49 ,img : 'images/tks/tks1.jpg'},
+        { name: 'Gold Borders Thank You Notes', occ: 'Papyrus',price: 11.99 ,img : 'images/tks/tks2.jpg'},
+        { name: 'Many Languages Dogs Thank-You Card',occ: 'Papyrus' ,price: 1.99 ,img : 'images/tks/tks3.jpg'},
+        { name: 'White Floral Sympathy Thank You', occ: 'Papyrus',price: 6.99 ,img : 'images/tks/tks4.jpg'},
+        { name: 'Thanks to You Jumbo Thank You Card',occ: 'Papyrus',price: 9.99 ,img : 'images/tks/tks5.jpg'},
+        { name: 'Navy and Gold Modern Thank You Notes',occ: 'Papyrus', price: 7.99 ,img : 'images/tks/tks6.jpg'},
+        { name: 'Dog With Flowers Thank You Card', occ: 'Papyrus',price: 3.59 ,img : 'images/tks/tks7.jpg'},
+        { name: 'Colorful Brush Strokes Thank You Card', occ: 'Papyrus',   price: 2.99 ,img : 'images/tks/tks8.jpg'},
+        { name: 'Classic Ivory and Gold Thank You Notes',occ: 'Raise', price: 9.99 ,img : 'images/tks/tks9.jpg'},
+
+        { name: 'Mr. and Mrs. Wedding Card', occ: 'Hallmark', price: 6.99 ,img : 'images/wed/wed1.jpg'},
+        { name: 'A Toast for You Wedding Card',occ: 'Raise', price: 6.99 ,img : 'images/wed/wed2.jpg'},
+        { name: 'Laser-Cut Floral Wedding', occ: 'Raise',price: 5.99 ,img : 'images/wed/wed3.jpg'},
+        { name: 'So Very Right Wedding Card', occ: 'Raise',price: 2.99 ,img : 'images/wed/wed4.jpg'},
+        { name: 'Wedding Blessing Religious Card', occ: 'Raise',price: 3.99 ,img : 'images/wed/wed5.jpg'},
+        { name: 'Hot Air Balloons Engagement Card',occ: 'Raise', price: 3.99 ,img : 'images/wed/wed6.jpg'},
+        { name: 'Joy, Laughter and Love Wedding Card', occ: 'Raise',price: 4.99 ,img : 'images/wed/wed7.jpg'},
+        { name: 'Dance With Happiness Wedding Card',occ: 'Raise', price: 2.99 ,img : 'images/wed/wed8.jpg'},
+        { name: 'Daughter and Son-in-Law Wedding Card', occ: 'Raise',price: 3.99 ,img : 'images/wed/wed9.jpg'},
+       
+     
+       
+    ];
+});
