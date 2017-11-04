@@ -214,6 +214,25 @@ border-left: 1px solid;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
+.search_box1 input {
+  background:#FFF;
+  border: medium none;
+  color: black;
+  font-family: 'roboto';
+  font-size: 18px;
+  font-style: italic;
+  color:darkorange;  
+  font-weight: 300;
+  height: 43px;
+  outline: medium none;
+  padding-left: -2px;
+ 
+  background-image: url(../images/home/searchicon.png);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  margin-top: 2px;
+  
+}
 
 
 /*  Dropdown menu*/
